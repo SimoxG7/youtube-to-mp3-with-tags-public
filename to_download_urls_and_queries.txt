@@ -1,0 +1,3 @@
+# comments start with the "#". Every line starting as such (or that is blank) will be ignored.
+# the following is an example URL of a song I like a lot; comment it if needed!
+https://music.youtube.com/watch?v=uG7eRgTwkck
