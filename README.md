@@ -2,16 +2,11 @@
 
 - Python3
 - ffmpeg ([Download link](https://ffmpeg.org/download.html))
-<!-- - `ffmpeg` installed on the machine (use `Chocolatey` or an .exe and add it to the path) **(might not be needed!)** -->
-<!-- - Install the Python package `ffmpeg-python` by running `pip install ffmpeg-python` -->
 - Install the necessary Python packages by running: `pip install yt_dlp music-tag ytmusicapi Pillow requests`
 
 ### Note
 
 `yt-dlp` should be installed by installing the python package, but if you find any trouble you can install it from its [GitHub link](https://github.com/yt-dlp/yt-dlp)
-<!-- - Install the Python package `yt_dlp` by running `pip install yt_dlp` -->
-<!-- - Install the Python package `eyed3` by running `pip install eyed3` -->
-<!-- - Install the Python package `music-tag` by running `pip install music-tag` -->
 
 ## How to use
 
@@ -94,10 +89,6 @@ Here's what I suggest:
 6) When running the script pass the filename (with its path if it isn't in the same folder as the project) with the given option.
 
 **REMEMBER NOT TO SHARE YOUR COOKIES** (unless you know what you're doing!)
-<!-- https://github.com/yt-dlp/yt-dlp/wiki/Extractors#exporting-youtube-cookies -->
-<!-- copy('# Netscape HTTP Cookie File\n' + document.cookie.split(/; /g).map(e => e.replace('=', '\t')).map(e => window.location.hostname.replace('www.', '.') + '\tTRUE\t/\tFALSE\t-1\t' + e).join('\n')) -->
-<!-- https://chromewebstore.google.com/detail/get-cookiestxt-locally/cclelndahbckbenkjhflpdbgdldlbecc -->
-<!-- https://www.reddit.com/r/youtubedl/wiki/cookies/ -->
 
 ## Feedback
 
