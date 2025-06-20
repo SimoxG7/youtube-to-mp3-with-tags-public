@@ -177,5 +177,5 @@ class CommonFunctions:
       os.mkdir(f"logs/logs {log_program_start_string}")
 
   def check_url_validity(self, url):
-    regex_match = re.match(r"^http(s)?:\/\/(www\.)?(music\.)?youtube\.com\/((watch\?v=[a-zA-Z0-9\-_]{11})(&list=[a-zA-Z0-9\-_]+)?|playlist\?list=[a-zA-Z0-9\-_]+)$", url)
+    regex_match = re.match(r"^http(s)?:\/\/(www\.)?((music\.)?youtube\.com\/((watch\?v=[a-zA-Z0-9\-_]{11})(&list=[a-zA-Z0-9\-_]+)?|playlist\?list=[a-zA-Z0-9\-_]+)|youtu\.be\/[a-zA-Z0-9\-_]{11}(&si=[a-zA-Z0-9\-_]+)?)$", url)
     return regex_match != None
