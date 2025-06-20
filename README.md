@@ -78,7 +78,7 @@ Use this script at your own risk regarding your YouTube account (whenever using 
 All the URLS satisfying the following RegEX are accepted:
 
 ```
-^http(s)?:\/\/(((www\.)?youtube|music\.youtube)\.com\/((watch\?v=[a-zA-Z0-9\-_]{11})(&list=[a-zA-Z0-9\-_]+)?|playlist\?list=[a-zA-Z0-9\-_]+)|youtu\.be\/[a-zA-Z0-9\-_]{11}(&si=[a-zA-Z0-9\-_]+)?)$
+^http(s)?:\/\/(((www\.)?youtube|music\.youtube)\.com\/((watch\?v=[a-zA-Z0-9\-_]{11})(&list=[a-zA-Z0-9\-_]+)?|playlist\?list=[a-zA-Z0-9\-_]+)|youtu\.be\/[a-zA-Z0-9\-_]{11}(\?si=[a-zA-Z0-9\-_]+)?)$
 ```
 
 Some examples:
@@ -87,6 +87,7 @@ Some examples:
 - `https://www.youtube.com/watch?v=uG7eRgTwkck`
 - `https://youtube.com/watch?v=PJ4JERVhYVQ&list=PLkq7KKY3sfbNLucY1orN0Bp2IYhCDSz25`
 - `https://youtu.be/uG7eRgTwkck`
+- `https://youtu.be/uG7eRgTwkck?si=NXiG6Z0zdnNIb6Kz`
 
 If your URLs are not accepted, please try to clean them up or contact me to fix the RegEx.
 
