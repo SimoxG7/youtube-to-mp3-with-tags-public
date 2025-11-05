@@ -14,12 +14,12 @@ from simox_yt2mp3_stdout_logger import StdOutLogger
 class Downloader:
   
   def __init__(
-    self, 
-    options: Options, 
-    std_out_colors: StdOutColors, 
-    file_logger: FileLogger, 
-    std_out_logger: StdOutLogger, 
-    metadata_assigner: MetadataAssigner, 
+    self,
+    options: Options,
+    std_out_colors: StdOutColors,
+    file_logger: FileLogger,
+    std_out_logger: StdOutLogger,
+    metadata_assigner: MetadataAssigner,
     language_supports: list[AbstractLanguageSupport],
     common_functions: CommonFunctions,
   ):
@@ -64,7 +64,8 @@ class Downloader:
   
   def __download_audio__(self, yt_url, info, is_playlist):
     ytdl_opts = {
-      "format": "bestaudio/best",
+      "format": "ba/b",
+      "format_sort": ["abr", "asr"],
       "postprocessors": [{
         "key": "FFmpegExtractAudio",
         "preferredcodec": "mp3",

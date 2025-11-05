@@ -7,8 +7,8 @@ from simox_yt2mp3_stdout_colors import StdOutColors
 class FileLogger:
   
   def __init__(
-    self, 
-    options: Options, 
+    self,
+    options: Options,
     std_out_colors: StdOutColors,
     common_functions: CommonFunctions,
   ):

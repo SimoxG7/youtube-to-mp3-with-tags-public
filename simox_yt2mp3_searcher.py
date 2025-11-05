@@ -13,7 +13,7 @@ class Searcher:
   __youtube_base_href_playlist__ = "https://music.youtube.com/playlist?list="
   
   def __init__(
-    self, 
+    self,
     options: Options,
     std_out_colors: StdOutColors,
     file_logger: FileLogger,

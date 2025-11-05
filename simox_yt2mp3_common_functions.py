@@ -10,10 +10,10 @@ from simox_yt2mp3_stdout_colors import StdOutColors
 class CommonFunctions:
   
   def __init__(
-      self, 
-      options: Options, 
+      self,
+      options: Options,
       std_out_colors: StdOutColors,
-      language_supports: list[AbstractLanguageSupport],  
+      language_supports: list[AbstractLanguageSupport],
     ):
     self.options = options
     self.std_out_colors = std_out_colors
@@ -23,7 +23,7 @@ class CommonFunctions:
     return reduce(lambda s, f: f(s), [language_support.translate_regex for language_support in self.language_supports], filename)
     # for language_support in language_supports:
       # filename = language_support.translate_regex(filename)
-    # return filename  
+    # return filename
 
   def is_music(self, info: dict):
     return info.get("artists") != None and info.get("track") != None

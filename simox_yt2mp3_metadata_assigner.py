@@ -14,10 +14,10 @@ class MetadataAssigner:
   artist_tag_separator = ", "
 
   def __init__(
-    self, 
-    options: Options, 
-    std_out_colors: StdOutColors, 
-    file_logger: FileLogger, 
+    self,
+    options: Options,
+    std_out_colors: StdOutColors,
+    file_logger: FileLogger,
     std_out_logger: StdOutLogger,
     common_functions: CommonFunctions,
   ):

@@ -14,15 +14,15 @@ from simox_yt2mp3_stdout_logger import StdOutLogger
 class Processor:
   
   def __init__(
-      self, 
-      options: Options, 
-      std_out_colors: StdOutColors, 
-      file_logger: FileLogger, 
-      std_out_logger: StdOutLogger, 
-      metadata_assigner: MetadataAssigner, 
-      language_supports: list[AbstractLanguageSupport], 
-      downloader: Downloader, 
-      searcher: Searcher, 
+      self,
+      options: Options,
+      std_out_colors: StdOutColors,
+      file_logger: FileLogger,
+      std_out_logger: StdOutLogger,
+      metadata_assigner: MetadataAssigner,
+      language_supports: list[AbstractLanguageSupport],
+      downloader: Downloader,
+      searcher: Searcher,
       extractor: Extractor,
       common_functions: CommonFunctions,
     ):
@@ -65,9 +65,9 @@ class Processor:
     now = datetime.now()
     self.file_logger.log_current_iteration = [
       yt_url, 
-      "ERROR" if self.file_logger.log_error_during_playlist else "OK", 
-      "ERROR" if self.file_logger.log_error_during_playlist else "OK", 
-      self.common_functions.elapsed_time_float_seconds(logger_current_playlist_start, now), 
+      "ERROR" if self.file_logger.log_error_during_playlist else "OK",
+      "ERROR" if self.file_logger.log_error_during_playlist else "OK",
+      self.common_functions.elapsed_time_float_seconds(logger_current_playlist_start, now),
       (self.options.getoption("destination_directory") + playlist_filename) if self.options.getoption("playlists_in_their_own_directory") else ""
     ]
     self.file_logger.print_log_row_runtime()
