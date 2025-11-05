@@ -5,8 +5,8 @@ from simox_yt2mp3_common_functions import CommonFunctions
 class StdOutLogger:
   
   def __init__(
-    self, 
-    options: Options, 
+    self,
+    options: Options,
     std_out_colors: StdOutColors,
     common_functions: CommonFunctions,
   ):

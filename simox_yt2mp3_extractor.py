@@ -9,10 +9,10 @@ from simox_yt2mp3_stdout_logger import StdOutLogger
 class Extractor:
   
   def __init__(
-    self, 
-    options: Options, 
-    std_out_colors: StdOutColors, 
-    file_logger: FileLogger, 
+    self,
+    options: Options,
+    std_out_colors: StdOutColors,
+    file_logger: FileLogger,
     std_out_logger: StdOutLogger,
     common_functions: CommonFunctions,
   ):
@@ -23,7 +23,8 @@ class Extractor:
   
   def extract_info(self, yt_url):
     ytdl_opts = {
-      "format": "bestaudio/best",
+      "format": "ba/b",
+      "format_sort": ["abr", "asr"],
       "postprocessors": [{
         "key": "FFmpegExtractAudio",
         "preferredcodec": "mp3",
