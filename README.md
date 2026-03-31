@@ -110,4 +110,4 @@ Here's what I suggest:
 
 ## Feedback
 
-If you encounter an error or think some functionalities could be added, please let me know by opening an issue on the [GitHub project](https://github.com/SimoxG7/youtube-to-mp3-with-tags)!
+If you encounter an error or think some functionalities could be added, please let me know by opening an issue on the [GitHub project](https://github.com/SimoxG7/youtube-to-mp3-with-tags-public)!
