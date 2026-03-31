@@ -25,6 +25,7 @@ class Options:
     "quiet_stdout": False,
     "no_stdout": False,
     "allow_non_squared_covers": False,
+    "crop_non_squared_covers": True,
     "overwrite_files": False,
     "search_force_candidate_selection": False,
     "enable_free_search": False,
@@ -117,8 +118,8 @@ class Options:
         case "--allow-non-squared-covers":
           self.setoption("allow_non_squared_covers", True)
           
-        case "--allow-non-squared-covers":
-          self.setoption("allow_non_squared_covers", True)
+        case "--no-crop-non-squared-covers":
+          self.setoption("crop_non_squared_covers", False)
           
         # case "--force-accept-search-candidate":
         #   self.setoption("force_accept_search_candidate", True)

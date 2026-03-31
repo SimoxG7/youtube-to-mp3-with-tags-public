@@ -41,6 +41,7 @@ The possible options are the following:
 - `--quiet-stdout`: if enabled the standard output to the command line will be minimized to the most important informations regarding the status of the execution.
 - `--no-stdout`: if enabled no standard output will be produced. I do not recommend this as informations on the process are quite useful and I've spent a decent amount of time programming them.
 - `--allow-non-squared-covers`: if enabled the research for the covers will also extend to non-squared images. If a non-squared image is used as cover either black bands will be present in it or the image will be cropped to a square.
+- `--no-crop-non-squared-covers`: if enabled the covers will not be automatically cropped if they are found to be non-squared.
 - `--overwrite-files`: if enabled the destination files will be overwritten in case they already exist. If disabled (default behaviour) then the files will not be overwritten and the new file will be ending with ` (d)`, where `d` is a number representing the copy count.
 - `--search-force-candidate-selection`: if enabled forces the selection to the best candidate while searching, ignoring any acceptance ratio set. This option can lead to some wrong downloads if not used with care.
 - `--enable-free-search`: if enabled the script doesn't enforce a format for the search queries; instead it will directly search on YouTube Music the given query. It pretty much works as well as the given query.

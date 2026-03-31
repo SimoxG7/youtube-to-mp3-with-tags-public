@@ -35,6 +35,14 @@ class Extractor:
       "quiet": self.options.getoption("quiet_stdout"),
       "no_warnings": self.options.getoption("quiet_stdout"),
       "cookiefile": self.options.getoption("cookiefile"),
+      "extractor_args": {
+        "youtube": {
+          "skip": ["dash", "hls"],
+          # "player_client": ["android_music"] # Forces the YouTube Music client metadata
+          "player_client": ["web_music"],
+          "player_skip": ["web_music_player"],
+        }
+      }
     }
     with yt_dlp.YoutubeDL(ytdl_opts) as ytdl:
       return ytdl.extract_info(yt_url, download=False)

@@ -33,3 +33,19 @@ class StdOutLogger:
   def print(self, string_to_print):
     if not self.options.getoption("no_stdout"):
       print(string_to_print)
+      
+  def log_info(self, string_to_print):
+    if not self.options.getoption("no_stdout"):
+      print(f"[{self.std_out_colors.get_colored_string("INFO", StdOutColors.CYAN)}] {string_to_print}")
+      
+  def log_success(self, string_to_print):
+    if not self.options.getoption("no_stdout"):
+      print(f"[{self.std_out_colors.get_colored_string("SUCCESS", StdOutColors.GREEN)}] {string_to_print}")
+      
+  def log_warning(self, string_to_print):
+    if not self.options.getoption("no_stdout"):
+      print(f"[{self.std_out_colors.get_colored_string("WARNING", StdOutColors.YELLOW)}] {string_to_print}")
+      
+  def log_error(self, string_to_print):
+    if not self.options.getoption("no_stdout"):
+      print(f"[{self.std_out_colors.get_colored_string("ERROR", StdOutColors.RED)}] {string_to_print}")

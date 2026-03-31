@@ -1,6 +1,6 @@
 import difflib
 from io import BytesIO
-from PIL import Image
+from PIL import Image, ImageChops
 import requests
 
 from simox_yt2mp3_common_functions import CommonFunctions
@@ -30,9 +30,16 @@ class MetadataAssigner:
   def __find_best_cover__(self, info: dict):
     thumbnails: list[dict] = info.get("thumbnails")
     thumbnails_with_resolution = list(filter(lambda thumbnail: thumbnail.get("resolution") != None and thumbnail.get("height") == thumbnail.get("width") and thumbnail.get("height") <= self.options.getoption("max_res"), thumbnails))
+  
     if thumbnails_with_resolution != []:
       cover_with_best_resolution = max(thumbnails_with_resolution, key=lambda thumbnail: thumbnail.get("height"))
       return cover_with_best_resolution
+    
+    if self.options.getoption("crop_non_squared_covers"):
+      thumbnails_to_be_cropped = [thumbnail for thumbnail in thumbnails if thumbnail.get("height") and thumbnail.get("height") <= self.options.getoption("max_res")]
+      if thumbnails_to_be_cropped:
+        return max(thumbnails_to_be_cropped, key=lambda thumbnail: thumbnail.get("height", 0))
+      
     if not self.options.getoption("allow_non_squared_covers"):
       return None
     thumbnails_not_necessarily_squared = list(filter(lambda thumbnail: thumbnail.get("height") != None and thumbnail.get("height") <= self.options.getoption("max_res"), thumbnails))
@@ -44,10 +51,30 @@ class MetadataAssigner:
   def __download_cover__(self, url):
     image = Image.open(requests.get(url, stream=True).raw)
     bytes_io = BytesIO()
+    width, height = image.size
+    
+    if (width != height and self.options.getoption("crop_non_squared_covers")):
+      self.std_out_logger.print_yellow("Cropping the thumbnail as it is not squared")
+      # detects borders that aren't perfectly black
+      # use a point transform to turn dark pixels (0-40) into pure black
+      threshold = 40
+      grayscale = image.convert('L')
+      mask = grayscale.point(lambda p: p > threshold and 255)
+      bbox = mask.getbbox()
+      
+      if bbox:
+        image = image.crop(bbox)
+
+      # applying square crop to the cleaned image
+      if (self.options.getoption("crop_non_squared_covers")):
+        new_edge = min(width, height)
+        left = (width - new_edge) / 2
+        top = (height - new_edge) / 2
+        image = image.crop((left, top, left + new_edge, top + new_edge))
+    
     image.save(bytes_io, format="JPEG")
     bytes_value = bytes_io.getvalue()
     return bytes_value
-    # return BytesIO(urlopen(url).read())
 
   def assign_metadata(self, mp3_file, info: dict):
     # album
